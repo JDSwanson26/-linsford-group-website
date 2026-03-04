@@ -13,7 +13,7 @@ html {
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid #e85a6e;
+  outline: 2px solid #FFD700;
   outline-offset: 2px;
 }
 
@@ -121,7 +121,7 @@ img[src] {
 }
 
 .quote-banner span:hover {
-  color: #e85a6e;
+  color: #FFD700;
   transform: translateY(-2px);
 }
 
@@ -137,7 +137,7 @@ footer a::after {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #e85a6e;
+  background-color: #FFD700;
   transition: width 0.3s ease;
 }
 
