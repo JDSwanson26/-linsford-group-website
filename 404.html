@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found - Linsford Group</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      const segmentCount = window.location.pathname.split('/').filter(Boolean).length;
+      const l = window.location.pathname.split('/').filter(Boolean);
+      
+      if (l[0] !== '') {
+        sessionStorage.setItem('redirect', l.join('/'));
+      }
+      
+      const path = sessionStorage.getItem('redirect') || '/';
+      window.location.replace(window.location.origin + path + '#' + path);
+    </script>
+  </head>
+  <body>
+    <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+      <h1>Redirecting...</h1>
+      <p>If you're not redirected automatically, <a href="/">click here</a>.</p>
+    </div>
+  </body>
+</html>
