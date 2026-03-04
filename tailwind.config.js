@@ -39,7 +39,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         navy: "#1a3a5c",
-        coral: "#e85a6e",
+        coral: "#FFD700",
         "light-gray": "#f5f5f5",
         "border-gray": "#e0e0e0",
       },
