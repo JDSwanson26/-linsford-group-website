@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 15%;
+    --primary: 210 55% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 210 30% 15%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 210 10% 40%;
+    --accent: 352 75% 63%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 352 75% 63%;
+    --radius: 0.5rem;
+    
+    --navy: #1a3a5c;
+    --coral: #e85a6e;
+    --light-gray: #f5f5f5;
+    --border-gray: #e0e0e0;
+    
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-foreground font-opensans antialiased;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-coral text-white px-10 py-4 rounded font-montserrat text-sm font-semibold uppercase tracking-wider 
+           transition-all duration-300 hover:bg-opacity-90 hover:scale-[1.02] hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border-2 border-coral text-navy px-10 py-4 rounded font-montserrat text-sm font-semibold uppercase tracking-wider
+           transition-all duration-300 hover:bg-coral hover:text-white;
+  }
+  
+  .section-label {
+    @apply text-xs font-montserrat font-semibold uppercase tracking-[2px] text-gray-500 mb-4;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-montserrat font-bold leading-tight;
+  }
+  
+  .service-card {
+    @apply bg-white border border-border-gray rounded-lg p-8 transition-all duration-400
+           hover:-translate-y-2 hover:shadow-card-hover hover:border-coral;
+  }
+  
+  .form-input {
+    @apply w-full border border-border-gray rounded px-4 py-3 font-opensans text-sm
+           focus:outline-none focus:border-coral focus:ring-1 focus:ring-coral/30 transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply font-montserrat text-sm font-medium text-navy hover:text-coral transition-colors duration-300 relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-coral transition-all duration-300 -translate-x-1/2;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .text-navy {
+    color: var(--navy);
+  }
+  
+  .text-coral {
+    color: var(--coral);
+  }
+  
+  .bg-navy {
+    background-color: var(--navy);
+  }
+  
+  .bg-coral {
+    background-color: var(--coral);
+  }
+  
+  .border-coral {
+    border-color: var(--coral);
+  }
+  
+  .duration-400 {
+    transition-duration: 400ms;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
